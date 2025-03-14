@@ -1,0 +1,13 @@
+# Ignore C++ compiled object files
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# Ignore compiled binaries
+bin/
+build/
