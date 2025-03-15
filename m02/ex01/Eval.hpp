@@ -40,20 +40,48 @@ class Eval
             {
                 get();
                 Fixed result = parse_expr();
+                char subop = peek(); 
+                if(subop==',')
+                {
+                    get();
+                    return result;
+                } 
                 get();
                 return result;
             }
             else if (isdigit(op))
             {
-
                 return parse_num();
             }
-
+            else if (isalpha(op))
+            {
+                return parse_fun();
+            }
             return Fixed(0);
         }
-
-
-
+        Fixed parse_fun()
+        {
+            std::string input;
+            while (isalpha(peek()))
+            {
+                input += static_cast<char>(std::tolower(get()));  
+            }
+        
+            Fixed lop = parse_expr();
+            Fixed rop = parse_expr();
+            get();
+        
+            if (input.compare("max") == 0)
+            {
+                return Fixed::max(lop, rop);
+            }
+            else if (input.compare("min") == 0) 
+            {
+                return Fixed::min(lop, rop);
+            }
+            return Fixed(0);
+        }
+        
         Fixed parse_num() {
             std::string input;
             while (isdigit(peek()) || peek() == '.') 
