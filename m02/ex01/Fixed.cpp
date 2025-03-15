@@ -19,7 +19,7 @@ Fixed::Fixed(float input)
 Fixed::Fixed( const  Fixed& fixed)
 {
 
-        std::cout << "copy constructor called \n";
+        //std::cout << "copy constructor called \n";
         this->value = fixed.value;
 
 } 
@@ -27,7 +27,7 @@ Fixed::Fixed( const  Fixed& fixed)
 // assigment op constructor
 Fixed& Fixed::operator=(const Fixed&  other) 
 {
-        std::cout << "assigment op constructor called \n";
+        //std::cout << "assigment op constructor called \n";
 
         if(this!=&other)
         {
@@ -40,7 +40,7 @@ Fixed& Fixed::operator=(const Fixed&  other)
 
 int    Fixed::getRawBits( void )      const 
 {
-        std::cout << "getRawBits called \n";
+        //std::cout << "getRawBits called \n";
         return  this->value;
 }
 
@@ -63,7 +63,7 @@ int  Fixed::toInt( void )     const
 
 Fixed::~Fixed()
 {
-        std::cout << "Distructor CALLLED " << std::endl;
+        //std::cout << "Distructor CALLLED " << std::endl;
 
 }
 
@@ -111,7 +111,7 @@ Fixed Fixed::operator/(const Fixed& fixed) const
  */
 bool Fixed::operator==(const Fixed& other) const
  {
-        std::cout << "== called\n"; 
+        //std::cout << "== called\n"; 
         float abs = this->toFloat() - other.toFloat() ;
         if(abs < 0) {abs=-abs;}
         return abs < EPSILON;
@@ -120,7 +120,7 @@ bool Fixed::operator==(const Fixed& other) const
 bool Fixed::operator!=(const Fixed& other) const
 {
 
-        std::cout << "!= called\n"; 
+       // std::cout << "!= called\n"; 
        
         return this->value!=other.value;
 
@@ -129,7 +129,7 @@ bool Fixed::operator!=(const Fixed& other) const
 bool Fixed::operator>=(const Fixed& other) const
 {
 
-        std::cout << ">= called\n"; 
+        //std::cout << ">= called\n"; 
         return this->value>=other.value;
 
 }
@@ -137,14 +137,14 @@ bool Fixed::operator>=(const Fixed& other) const
 
 bool Fixed::operator<=(const Fixed& other) const
 {
-        std::cout << "<= called\n"; 
+        //std::cout << "<= called\n"; 
         return this->value <=other.value;
 }
 
 bool Fixed::operator>(const Fixed& other) const
 {
 
-        std::cout << "> called\n"; 
+        //std::cout << "> called\n"; 
         return this->value>other.value;
 
 }
@@ -152,7 +152,7 @@ bool Fixed::operator>(const Fixed& other) const
 
 bool Fixed::operator<(const Fixed& other) const
 {
-        std::cout << "< called\n"; 
+        //std::cout << "< called\n"; 
         return this->value < other.value;
 }
 
@@ -167,7 +167,7 @@ std::ostream  &operator<<(std::ostream &o, Fixed const &fixed)
 // prefix-inc
 Fixed& Fixed::operator++()                      
 {
-        std::cout << "++value \n";
+       // std::cout << "++value \n";
         value++;
         return *this;          
 }
@@ -175,7 +175,7 @@ Fixed& Fixed::operator++()
 // post-inc
 Fixed Fixed::operator++(int)                      
 {
-        std::cout << "value++\n";
+        //std::cout << "value++\n";
         Fixed result = *this;
         value++;
         return result; 
@@ -183,7 +183,7 @@ Fixed Fixed::operator++(int)
 // prefix-dec
 Fixed& Fixed::operator--()                      
 {
-        std::cout << "--value \n";
+        //std::cout << "--value \n";
         value++;
         return *this;          
 }
@@ -192,7 +192,7 @@ Fixed& Fixed::operator--()
 // post-dec
 Fixed Fixed::operator--(int)                      
 {
-        std::cout << "value--\n";
+        //std::cout << "value--\n";
         Fixed result = *this;
         value--;
         return result; 
