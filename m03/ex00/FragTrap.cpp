@@ -1,0 +1,96 @@
+#include <iostream>
+#include <string>
+#include "FragTrap.hpp"
+
+
+
+
+
+
+
+FragTrap::FragTrap(std::string _name)
+{
+        std::cout << "init cnstructor called" << '\n';
+        
+        this->_name          = _name;
+        this->_hit_pnts      = 100;
+        this->_max_hpnts     = 100;
+        this->_energy_pnts   = 100;
+        this->_level_nmbr    = 1  ;
+        this->_melee_atk_dmg = 30 ;
+        this->_range_atk_dmg = 20 ;
+        this->_armor_atk_rdc = 5  ;
+}
+
+FragTrap::FragTrap(const FragTrap& _fragTrap)
+{
+        std::cout << "copy cnstructor called" << '\n';
+
+        this->_name          =  _fragTrap._name;
+        this->_hit_pnts      =  _fragTrap._hit_pnts;
+        this->_max_hpnts     =  _fragTrap._max_hpnts;
+        this->_energy_pnts   =  _fragTrap._energy_pnts;
+        this->_level_nmbr    =  _fragTrap._level_nmbr;
+        this->_melee_atk_dmg =  _fragTrap._melee_atk_dmg;
+        this->_range_atk_dmg =  _fragTrap._range_atk_dmg;
+        this->_armor_atk_rdc =  _fragTrap._armor_atk_rdc; 
+
+}
+
+void FragTrap::rangedAttack(std::string const & target) const
+{
+        std::cout << "FR4G-TP " << _name << "attacks " 
+                  << target << "at range," << " causing "
+                  << _range_atk_dmg  << " points of damage!" <<'\n';
+        
+}
+
+
+
+void FragTrap::meleeAttack(std::string const & target) const
+{
+        std::cout << "FR4G-TP " << _name << "attacks " 
+                  << target << "at melee," << " causing "
+                  << _melee_atk_dmg  << " points of damage!" <<'\n';
+        
+}
+
+
+void FragTrap::takeDamage(unsigned int amount)
+{       
+        _hit_pnts-=(int)(amount/_armor_atk_rdc);
+        if(_hit_pnts < 0) {_hit_pnts = 0;}
+}
+
+
+void FragTrap::beRepaired(unsigned int amount)
+{
+        _hit_pnts+=(int)(amount);
+        if(_hit_pnts > _max_hpnts) {_hit_pnts = _max_hpnts;}
+}
+
+void FragTrap::vaulthunter_dot_exe(std::string const & target)
+{
+    if(_energy_pnts < 25 )
+    {
+        std::cout << "FR4G-TP " << _name << " is out of " 
+                  << "energy! No crazy attack this time." << '\n';
+       return;
+    }
+
+    _energy_pnts-=25;
+
+    const char* attacks[5] = {
+        "Laser Disco Party",
+        "Boomerang Grenade",
+        "Clap-in-the-Box",
+        "Rubber Ducky Rage",
+        "One Shot Wonder"
+    };
+    
+
+    std::cout << "FR4G-TP " << _name << " uses " 
+              << attacks[rand()%5] << "on" << target
+              <<", causing chaos!" << '\n';
+    
+}
