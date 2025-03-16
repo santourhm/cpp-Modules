@@ -1,8 +1,8 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
@@ -22,7 +22,9 @@ class FragTrap : public ClapTrap
     public:
 
             void vaulthunter_dot_exe(std::string const & target);
-
+            
+            using   ClapTrap::operator=;
+            
             FragTrap() ;
             FragTrap(std::string _name);
             FragTrap(const FragTrap& _fragTrap);

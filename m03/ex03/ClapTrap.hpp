@@ -1,8 +1,8 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
@@ -36,6 +36,8 @@ class ClapTrap
             void meleeAttack(std::string const & target)  const; 
             void takeDamage(unsigned int amount);
             void beRepaired(unsigned int amount);
+
+            std::string _getName() const; 
             
             ClapTrap() ;
             ClapTrap(std::string _name);

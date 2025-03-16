@@ -1,8 +1,8 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
@@ -10,25 +10,27 @@
 /* Tel : +33758985508   | E-mail :     hamza.santoura@phelma.grenoble-inp.fr  */
 /* ************************************************************************** */
 
-#ifndef _FRAGTRAP_HPP
-#define _FRAGTRAP_HPP
+#ifndef _SUPERTRAP_HPP
+#define _SUPERTRAP_HPP
 #include <string>
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
-class FragTrap : public ClapTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
-    
-            
     public:
 
-            void vaulthunter_dot_exe(std::string const & target);
+            
+            SuperTrap() ;
+            SuperTrap(std::string _name);
+            ~SuperTrap() = default;
 
-            FragTrap() ;
-            FragTrap(std::string _name);
-            FragTrap(const FragTrap& _fragTrap);
-            ~FragTrap() = default;
+            void rangedAttack(std::string const & target) const override;
+            void meleeAttack(std::string const & target)  const override;
 
-    };
+            using NinjaTrap::ninjaShoebox;
+
+};
 
 
 

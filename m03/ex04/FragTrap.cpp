@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
 /* ************************************************************************** */
 /* Tel : +33758985508   | E-mail :     hamza.santoura@phelma.grenoble-inp.fr  */
 /* ************************************************************************** */
-
 #include <iostream>
 #include <string>
 #include "FragTrap.hpp"
@@ -20,6 +19,11 @@
 FragTrap::FragTrap() : ClapTrap()
 {  
         std::cout << "ClapTrap() :  Constructo in FragTrap" << '\n';
+        this->_range_atk_dmg  = 20;
+        this->_armor_atk_rdc  = 5;
+        this->_hit_pnts = 100;
+        this->_max_hpnts =  100;
+
 }
 
 
@@ -45,6 +49,25 @@ FragTrap::FragTrap(const FragTrap& _fragTrap)
         this->_armor_atk_rdc =  _fragTrap._armor_atk_rdc; 
 
 }
+
+void FragTrap::rangedAttack(std::string const & target) const 
+{
+        std::cout << "FR4G-TP " << _name << "attacks " 
+                  << target << "at range," << " causing "
+                  << _range_atk_dmg  << " points of damage!" <<'\n';
+        
+}
+
+
+
+void FragTrap::meleeAttack(std::string const & target) const
+{
+        std::cout << "FR4G-TP " << _name << "attacks " 
+                  << target << "at melee," << " causing "
+                  << _melee_atk_dmg  << " points of damage!" <<'\n';
+        
+}
+
 
 
 
@@ -73,3 +96,4 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
               <<", causing chaos!" << '\n';
     
 }
+

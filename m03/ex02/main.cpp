@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
+/* #   #  #   #  #      #      #     #   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #      #   #  #      #      #     #   #   #                                */
+/* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
+/*                                                                            */
+/* ************************************************************************** */
+/* Tel : +33758985508   | E-mail :     hamza.santoura@phelma.grenoble-inp.fr  */
+/* ************************************************************************** */
+
+
 #include <iostream>
 #include <ctime>  // For srand and time
 #include "ClapTrap.hpp"
@@ -5,7 +18,7 @@
 #include "ScavTrap.hpp"
 
 int main() {
-    srand(time(NULL)); // Seed random number generator for vaulthunter_dot_exe and challengeNewcomer
+    srand(time(NULL)); 
 
     std::cout << "\n--- Creating FragTrap ---\n";
     FragTrap robot("Clappy");
@@ -20,11 +33,11 @@ int main() {
     std::cout << "\n--- Testing FragTrap Damage & Repair ---\n";
     robot.takeDamage(20);
     robot.beRepaired(15);
-    robot.takeDamage(200); // Test extreme damage case
-    robot.beRepaired(200); // Test over-repair case
+    robot.takeDamage(200);
+    robot.beRepaired(200);
 
     std::cout << "\n--- Testing VaultHunter.EXE ---\n";
-    for (int i = 0; i < 5; ++i) { // Test multiple calls to verify random behavior
+    for (int i = 0; i < 5; ++i) { 
         robot.vaulthunter_dot_exe("RandomTarget");
     }
 

@@ -1,8 +1,8 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
@@ -74,9 +74,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 }
 
 
-void ClapTrap::rangedAttack(std::string const & target) const
+/* void ClapTrap::rangedAttack(std::string const & target) const
 {
-        std::cout << "FR4G-TP " << _name << "attacks " 
+        std::cout << "ClapTrap " << _name << "attacks " 
                   << target << "at range," << " causing "
                   << _range_atk_dmg  << " points of damage!" <<'\n';
         
@@ -86,26 +86,27 @@ void ClapTrap::rangedAttack(std::string const & target) const
 
 void ClapTrap::meleeAttack(std::string const & target) const
 {
-        std::cout << "FR4G-TP " << _name << "attacks " 
+        std::cout << "ClapTrap " << _name << "attacks " 
                   << target << "at melee," << " causing "
                   << _melee_atk_dmg  << " points of damage!" <<'\n';
         
 }
-
+ */
 
 void ClapTrap::takeDamage(unsigned int amount)
 {       
-        _hit_pnts-=(int)(amount/_armor_atk_rdc);
+        _hit_pnts-=(unsigned int)(amount/_armor_atk_rdc);
         if(_hit_pnts < 0) {_hit_pnts = 0;}
 }
 
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-        _hit_pnts+=(int)(amount);
+        _hit_pnts+=(unsigned int)(amount);
         if(_hit_pnts > _max_hpnts) {_hit_pnts = _max_hpnts;}
 }
 
 
-
-
+std::string ClapTrap::_getName() const {
+        return _name;
+    }

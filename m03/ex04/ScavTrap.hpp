@@ -1,8 +1,8 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
@@ -10,23 +10,26 @@
 /* Tel : +33758985508   | E-mail :     hamza.santoura@phelma.grenoble-inp.fr  */
 /* ************************************************************************** */
 
-#ifndef _FRAGTRAP_HPP
-#define _FRAGTRAP_HPP
+#ifndef _SCAVTRAP_HPP
+#define _SCAVTRAP_HPP
 #include <string>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
-    
-            
     public:
 
-            void vaulthunter_dot_exe(std::string const & target);
+            void challengeNewcomer() const;
 
-            FragTrap() ;
-            FragTrap(std::string _name);
-            FragTrap(const FragTrap& _fragTrap);
-            ~FragTrap() = default;
+            void rangedAttack(std::string const & target) const override;
+            void meleeAttack(std::string const & target)  const override;
+            
+            using   ClapTrap::operator=;
+
+            ScavTrap() ;
+            ScavTrap(std::string _name);
+            ScavTrap(const ScavTrap& _ScavTrap);
+            ~ScavTrap() = default;
 
     };
 

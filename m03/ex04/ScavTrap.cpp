@@ -1,8 +1,8 @@
 /* ************************************************************************** */
 /*                                                                            */
 /* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
-/* #   #  #   #  #      #      #     #   #   #                                */
-/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #   #  #   #  #      #      #*   #*   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * # *   *#*#*                                */
 /* #      #   #  #      #      #     #   #   #                                */
 /* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
 /*                                                                            */
@@ -44,6 +44,25 @@ ScavTrap::ScavTrap(const ScavTrap& _ScavTrap)
         this->_armor_atk_rdc =  _ScavTrap._armor_atk_rdc; 
 
 }
+
+void ScavTrap::rangedAttack(std::string const & target) const 
+{
+        std::cout << "SC4V-TP  " << _name << "attacks " 
+                  << target << "at range," << " causing "
+                  << _range_atk_dmg  << " points of damage!" <<'\n';
+        
+}
+
+
+
+void ScavTrap::meleeAttack(std::string const & target) const
+{
+        std::cout << "SC4V-TP  " << _name << "attacks " 
+                  << target << "at melee," << " causing "
+                  << _melee_atk_dmg  << " points of damage!" <<'\n';
+        
+}
+
 
 
 void ScavTrap::challengeNewcomer() const 

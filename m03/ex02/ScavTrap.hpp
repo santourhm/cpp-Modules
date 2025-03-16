@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/* *#*#*  #   #  *#*#*  #      #     #    *#*                                 */
+/* #   #  #   #  #      #      #     #   #   #                                */
+/* *#*#*  *#*#*  *#*#*  #      # * * #   *#*#*                                */
+/* #      #   #  #      #      #     #   #   #                                */
+/* #      #   #  *#*#*  *#*#*  #     #   #   #          By : SANTOURA Hamza   */
+/*                                                                            */
+/* ************************************************************************** */
+/* Tel : +33758985508   | E-mail :     hamza.santoura@phelma.grenoble-inp.fr  */
+/* ************************************************************************** */
+
 #ifndef _SCAVTRAP_HPP
 #define _SCAVTRAP_HPP
 #include <string>
@@ -7,12 +19,6 @@ class ScavTrap : public ClapTrap
 {
     public:
 
-/* 
-            void rangedAttack(std::string const & target) const ;
-            void meleeAttack(std::string const & target)  const; 
-            void takeDamage(unsigned int amount);
-            void beRepaired(unsigned int amount); */
-            
             void challengeNewcomer() const;
 
             ScavTrap() ;
