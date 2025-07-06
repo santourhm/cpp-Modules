@@ -7,7 +7,7 @@
 *.so
 *.a
 *.lib
-
+.vscode
 # Ignore compiled binaries
 bin/
 build/

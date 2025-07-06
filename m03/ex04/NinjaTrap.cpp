@@ -56,8 +56,8 @@ NinjaTrap::NinjaTrap(const NinjaTrap& _NinjaTrap)
 
 
 void NinjaTrap::ninjaShoebox(ClapTrap& target) {
-        std::cout << "NinjaTrap "      << _name << " sneaks up on ClapTrap "
-                  << target._getName() << " and throws a shuriken!" << std::endl;
+        std::cout  << "NinjaTrap "      << _name << " sneaks up on ClapTrap "
+                   << target._getName() << " and throws a shuriken!" << std::endl;
 }
 
 void NinjaTrap::ninjaShoebox(FragTrap& target) {
@@ -71,8 +71,8 @@ void NinjaTrap::ninjaShoebox(ScavTrap& target) {
 }
 
 void NinjaTrap::ninjaShoebox(NinjaTrap& target) {
-        std::cout << "NinjaTrap " << _name << " engages in a silent battle with NinjaTrap "
-                  << target._name << " and they both vanish into the shadows!" << std::endl;
+        std::cout << "NinjaTrap "      << _name << " engages in a silent battle with NinjaTrap "
+                  << target._name      << " and they both vanish into the shadows!" << std::endl;
 }
 
 
